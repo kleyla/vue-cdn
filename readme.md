@@ -54,3 +54,11 @@ v-on:click.once solo se puede modificar una vez
 ```
 
 ## Conditionals
+
+```html
+<p v-if="error">There has been an error</p>
+<p v-else-if="success">Success</p>
+<p v-show="error">Show There has been an error</p>
+```
+
+## Looping with v-for

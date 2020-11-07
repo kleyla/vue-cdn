@@ -14,6 +14,12 @@ new Vue({
     nearby: false,
     error: false,
     success: false,
+    characters: ["mario", "luigi", "yoshi", "bowser"],
+    girls: [
+      { name: "ley", age: 20 },
+      { name: "yol", age: 20 },
+      { name: "andy", age: 20 },
+    ],
   },
   methods: {
     greet: function (time) {

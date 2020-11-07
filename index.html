@@ -72,6 +72,25 @@
       <p v-show="success">Show Success</p>
       <button v-on:click="error = !error">Toggle error</button>
       <button v-on:click="success = !success">Toggle success</button>
+      <hr />
+      <h2>Looping through list</h2>
+      <ul>
+        <li v-for="character in characters">{{character}}</li>
+      </ul>
+      <ul>
+        <li v-for="(girl, index) in girls">
+          {{index}}. Name: {{girl.name}}, Age: {{girl.age}}
+        </li>
+      </ul>
+      <template v-for="(girl, index) in girls">
+        <h4>{{index}}. {{girl.name}}</h4>
+        <p>{{girl.age}}</p>
+      </template>
+      <template v-for="girl in girls">
+        <div v-for="(val, key) in girl">
+          <p>{{key}} - {{val}}</p>
+        </div>
+      </template>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="./assets/app.js"></script>
