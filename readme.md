@@ -62,3 +62,32 @@ v-on:click.once solo se puede modificar una vez
 ```
 
 ## Looping with v-for
+
+```html
+<template v-for="(girl, index) in girls">
+  <h4>{{index}}. {{girl.name}}</h4>
+  <p>{{girl.age}}</p>
+</template>
+```
+
+## Multiple Vue Instances
+
+```javascript
+var two = new Vue({
+  el: "vue-app-one",
+});
+```
+
+## Components
+
+```javascript
+Vue.component("name-component", {
+  template: "<p>HI, i am a component</p>",
+}
+```
+
+## Refs
+
+```html
+<input type="text" ref="my-name" />
+```

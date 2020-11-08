@@ -1,5 +1,20 @@
-new Vue({
-  el: "#vue-app",
+Vue.component("name-component", {
+  template:
+    "<p>HI, i am a component {{name}} <button v-on:click='changeName'>Change name</button> </p>",
+  data: function () {
+    return {
+      name: "Karen c",
+    };
+  },
+  methods: {
+    changeName: function () {
+      this.name = "Leyla c";
+    },
+  },
+});
+
+var one = new Vue({
+  el: "#vue-app-one",
   data: {
     name: "Karen",
     job: "Developer",
@@ -20,6 +35,7 @@ new Vue({
       { name: "yol", age: 20 },
       { name: "andy", age: 20 },
     ],
+    title: "Vue app one",
   },
   methods: {
     greet: function (time) {
@@ -67,5 +83,32 @@ new Vue({
         nearby: this.nearby,
       };
     },
+    greetC: function () {
+      return "Hello from app ONE";
+    },
   },
 });
+
+var two = new Vue({
+  el: "#vue-app-two",
+  data: {
+    title: "Vue app two",
+    output: "Your favorite food",
+  },
+  methods: {
+    changeTitle: function () {
+      one.title = "Title changed!";
+    },
+    readRefs: function () {
+      console.log(this.$refs);
+      console.log(this.$refs.test.innerText);
+      this.output = this.$refs.input.value;
+    },
+  },
+  computed: {
+    greet: function () {
+      return "Hello from app TWO";
+    },
+  },
+});
+two.title = "Changed from outside!";

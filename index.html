@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <div id="vue-app">
+    <div id="vue-app-one">
       <h1>{{ greet('afternoon') }}</h1>
       <h1>Name: {{name}}</h1>
       <p>Job: {{job}}</p>
@@ -91,6 +91,25 @@
           <p>{{key}} - {{val}}</p>
         </div>
       </template>
+      <h2>{{title}}</h2>
+      <p>{{greetC}}</p>
+      <hr />
+      <name-component></name-component>
+    </div>
+    <div id="vue-app-two">
+      <h2>{{title}}</h2>
+      <p>{{greet}}</p>
+      <button v-on:click="changeTitle">Change app one title</button>
+      <hr />
+      <name-component></name-component>
+      <hr />
+      <div>
+        <h2>Refs</h2>
+        <input type="text" ref="input" />
+        <button v-on:click="readRefs()">Submit</button>
+        <p>Your favorite food: {{output}}</p>
+        <div ref="test">TEST</div>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="./assets/app.js"></script>
